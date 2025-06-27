@@ -3,10 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node-pg-migrate",
+    "migrate:create": "npm run migrate create",
+    "migrate:up": "npm run migrate up"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.6.0",
+    "pg": "^8.16.2"
+  },
+  
+  "devDependencies": {
+    "node-pg-migrate": "^8.0.3"
+  }
 }
