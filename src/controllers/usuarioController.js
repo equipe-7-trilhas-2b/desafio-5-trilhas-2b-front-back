@@ -60,12 +60,21 @@ module.exports = {
       return res.status(500).json({ error: 'Falha no login. Tente novamente.' });
     }
   },
-
-  // ... (seus métodos index e delete continuam aqui)
   async index(req, res) {
-    // ...
+    try {
+      const usuarios = await require('../models/usuario').buscarTodos();
+      return res.status(200).json(usuarios);
+    } catch (error) {
+      return res.status(500).json({ error: 'Erro ao buscar usuários.' });
+    }
   },
   async delete(req, res) {
-    // ...
+    const { id } = req.params;
+    try {
+      await require('../models/usuario').deletarPorId(id);
+      return res.status(204).send();
+    } catch (error) {
+      return res.status(500).json({ error: 'Erro ao deletar usuário.' });
+    }
   }
 };
