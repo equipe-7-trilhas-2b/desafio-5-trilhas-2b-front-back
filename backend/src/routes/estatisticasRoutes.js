@@ -6,4 +6,8 @@ const estatisticasController = require('../controllers/estatisticasController');
 // Ex: GET /api/estatisticas/ranking-municipios?dias=30
 router.get('/ranking-municipios', estatisticasController.obterRankingMunicipios);
 
+router.get('/resumo', estatisticasController.obterResumo);
+
+router.get('/historico-diario', estatisticasController.obterHistoricoDiario);
+
 module.exports = router;
