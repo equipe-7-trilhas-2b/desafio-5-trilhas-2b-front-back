@@ -4,9 +4,8 @@ const Usuario = require('../models/usuario');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Função para gerar o token JWT
+// Função para gerar o token JWT (sem alterações aqui)
 function gerarToken(params = {}) {
-  // O 'seu_segredo_super_secreto' deve estar no .env!
   return jwt.sign(params, process.env.JWT_SECRET, {
     expiresIn: 86400, // Token expira em 24 horas
   });
@@ -14,22 +13,19 @@ function gerarToken(params = {}) {
 
 module.exports = {
   async register(req, res) {
+    // ... (seu código de registro continua igual, sem alterações)
     const { nome, email, senha } = req.body;
 
     try {
-      // 1. Verificar se o usuário já existe
       if (await Usuario.buscarPorEmail(email)) {
         return res.status(400).json({ error: 'Usuário já cadastrado.' });
       }
 
-      // 2. Criar o novo usuário (a senha é hasheada no Model)
       const usuario = await Usuario.criar(nome, email, senha);
-
-      // Não retornar a senha na resposta
       usuario.senha = undefined;
 
-      // 3. Gerar o token e enviar a resposta
-      const token = gerarToken({ id: usuario.id });
+      // <-- MUDANÇA: Adicionar permissão ao token de registro também
+      const token = gerarToken({ id: usuario.id, permissao: usuario.permissao });
       return res.status(201).json({ usuario, token });
 
     } catch (error) {
@@ -47,20 +43,29 @@ module.exports = {
         return res.status(404).json({ error: 'Usuário não encontrado.' });
       }
 
-      // 2. Comparar a senha enviada com a senha hasheada no banco
+      // 2. Comparar a senha
       if (!(await bcrypt.compare(senha, usuario.senha))) {
         return res.status(400).json({ error: 'Senha inválida.' });
       }
 
-      // Não retornar a senha na resposta
       usuario.senha = undefined;
 
-      // 3. Gerar o token e enviar a resposta
-      const token = gerarToken({ id: usuario.id });
+      // 3. Gerar o token com a permissão
+      // <-- MUDANÇA AQUI: Passamos o ID e a PERMISSÃO para o token.
+      const token = gerarToken({ id: usuario.id, permissao: usuario.permissao });
+      
       return res.status(200).json({ usuario, token });
 
     } catch (error) {
       return res.status(500).json({ error: 'Falha no login. Tente novamente.' });
     }
   },
+
+  // ... (seus métodos index e delete continuam aqui)
+  async index(req, res) {
+    // ...
+  },
+  async delete(req, res) {
+    // ...
+  }
 };

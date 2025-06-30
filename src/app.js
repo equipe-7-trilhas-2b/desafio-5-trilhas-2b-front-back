@@ -1,7 +1,11 @@
 // app.js
+
 require('dotenv').config();
 const express = require('express');
-const authRoutes = require('./routes/usuarioRoutes'); // Importa suas rotas
+
+// Importação das rotas
+const authRoutes = require('./routes/usuarioRoutes'); // Suas rotas existentes de login/registro
+const adminRoutes = require('./routes/adminRoutes');  // As novas rotas de gestão de usuários
 
 const app = express();
 
@@ -9,11 +13,10 @@ const app = express();
 app.use(express.json());
 
 // Diz ao app para usar suas rotas de autenticação sob o prefixo /auth
-// As rotas finais serão /auth/register e /auth/login
 app.use('/auth', authRoutes);
 
-// ... (o código que inicia o servidor com app.listen(PORT, ...))
-// Geralmente isso fica no server.js
+// Diz ao app para usar as rotas de gestão sob o prefixo /admin
+app.use('/admin', adminRoutes);
 
 // Exporta o app para ser usado pelo server.js
 module.exports = app;

@@ -39,6 +39,41 @@ const Usuario = {
       throw error;
     }
   },
+
+  // Função para buscar um usuário por ID
+async buscarPorId(id) {
+  const query = 'SELECT * FROM usuarios WHERE id = $1;';
+  try {
+    const { rows } = await db.query(query, [id]);
+    return rows[0];
+  } catch (error) {
+    console.error('Erro ao buscar usuário por id:', error);
+    throw error;
+  }
+},
+
+// Buscar todos os usuários
+async buscarTodos() {
+  const query = 'SELECT id, nome, email, data_criacao FROM usuarios;';
+  try {
+    const { rows } = await db.query(query);
+    return rows;
+  } catch (error) {
+    console.error('Erro ao buscar todos usuários:', error);
+    throw error;
+  }
+},
+
+async deletarPorId(id) {
+  const query = 'DELETE FROM usuarios WHERE id = $1;';
+  try {
+    await db.query(query, [id]);
+  } catch (error) {
+    console.error('Erro ao deletar usuário:', error);
+    throw error;
+  }
+}
 };
+
 
 module.exports = Usuario;
