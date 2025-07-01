@@ -25,5 +25,5 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
   },
-  "include": ["src", "src/main.tsx"]
+  "include": ["src", "src/main.tsx", "public/MapaMaranhao.tsx"]
 }

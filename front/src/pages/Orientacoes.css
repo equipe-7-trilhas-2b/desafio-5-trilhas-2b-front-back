@@ -1,0 +1,129 @@
+html, body {
+  height: auto;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+.orientacoes {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.orientacoes-header {
+  display: flex;
+  align-items: center;
+  background-color: #ffa500;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+.orientacoes-header h1 {
+  font-size: 24px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.orientacoes-content {
+  flex: 1; 
+  padding: 20px;
+}
+
+.orientacoes-content h2, h3 {
+  color: #000;
+}
+
+
+.orientacoes-buttons .btn {
+  display: block;
+  margin: 12px 0;
+  padding: 10px 20px;
+  background: #ffa500;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+}
+
+.instrucoes-detalhe {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.4s ease, height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;
+}
+
+.instrucoes-detalhe.ativo {
+  opacity: 1;
+  height: auto;
+  padding: 12px 20px;
+  background-color: #fff4e0;
+  border: 1px solid #ffa500;
+  margin: 4px 0 12px;
+  border-radius: 6px;
+}
+
+.instrucoes-detalhe.inativo {
+  opacity: 0;
+  height: 0;
+  padding: 0 20px;
+}
+
+.artigos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;          
+  margin-top: 24px;
+  justify-content: center; 
+}
+
+.artigo {
+  flex: 1 1 300px;   
+  max-width: 300px;  
+  display: flex;
+  flex-direction: column;
+  background: rgba(253, 212, 158, 0.85); 
+  border-radius: 12px;
+  color: inherit;
+  transition: transform 0.3s ease;
+  padding: 12px;
+}
+
+.artigo:hover {
+  transform: translateY(10px);
+}
+
+.artigo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+}
+
+.artigo p {
+  margin: 12px 0 0 0;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .artigos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .artigo {
+    max-width: 100%;
+  }
+}

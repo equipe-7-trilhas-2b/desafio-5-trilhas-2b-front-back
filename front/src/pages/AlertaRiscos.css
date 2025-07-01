@@ -1,0 +1,113 @@
+.alerta-riscos {
+  font-family: Arial, sans-serif;
+}
+
+.alerta-header {
+  display: flex;
+  align-items: center;
+  background-color: #FFA500; 
+  padding: 16px 24px;
+  border-radius: 0 0 24px 24px;
+}
+
+.alerta-header h1 {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.alerta-content {
+  padding: 20px;
+}
+
+.alerta-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: #FFD966; 
+  padding: 16px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.alerta-grafico {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.alerta-grafico img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.alerta-ranking h3 {
+  color: #000;
+}
+
+.alerta-ranking {
+  margin-bottom: 24px;
+}
+
+.alerta-ranking table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.alerta-ranking th {
+  background-color: #FF7A00; 
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.alerta-ranking td {
+  background-color: #FFD966;
+  padding: 12px;
+}
+
+.alerta-ranking tr + tr td {
+  border-top: 1px solid #fff;
+}
+
+.alerta-periodo {
+  background-color: #FFD966;
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.alerta-periodo h3 {
+  margin: 25px 0px 6px 0px;
+}
+
+.alerta-periodo p {
+  margin: 0;
+}
