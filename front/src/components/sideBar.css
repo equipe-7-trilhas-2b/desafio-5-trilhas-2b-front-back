@@ -1,14 +1,14 @@
 .sidebar {
-  width: 250px;
-  background-image: url('/incendio.jpg'); /* ajuste o caminho conforme sua pasta */
-  background-size: cover;     /* cobre toda a área */
+  width: 130px;
+  background-image: url('/incendio.jpg'); 
+  background-size: cover;     
   background-position: center;
   background-repeat: no-repeat;
   transition: width 0.3s ease;
   overflow: hidden;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   height: 100%;
-  color: white; /* para garantir contraste com o fundo */
+  color: white; 
   position: relative;
 }
 
@@ -19,7 +19,7 @@
 
 .sidebar ul {
   list-style: none;
-  position: relative; /* para ficar acima do overlay */
+  position: relative; 
   z-index: 1;
   padding: 20px;
   margin: 0;
@@ -29,10 +29,14 @@
   margin-bottom: 16px;
 }
 
+.sidebar ul li a:hover {
+  color:rgb(255, 255, 255);
+}
+
 .sidebar ul li a {
   text-decoration: none;
-  color: #250b0b;
+  color: #000000;
   font-size: 18px;
-  text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(32, 32, 32, 0.705);
   display: block;
 }

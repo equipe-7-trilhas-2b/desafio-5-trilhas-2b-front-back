@@ -16,25 +16,21 @@ export default function TopBar({ toggleSidebar, isSidebarOpen }: Props) {
 
   return (
     <header className="top-bar">
-      <button
-        className="menu-button"
-        onClick={toggleSidebar}
-        title={isSidebarOpen ? 'Fechar menu' : 'Abrir menu'}
-      >
-        {isSidebarOpen ? '←' : '☰'}
-      </button>
+  <button
+    className="menu-button"
+    onClick={toggleSidebar}
+    title={isSidebarOpen ? 'Fechar menu' : 'Abrir menu'}
+  >
+    {isSidebarOpen ? '←' : '☰'}
+  </button>
+  <button
+    className="logout-button"
+    onClick={handleLogout}
+    title="Sair"
+  >
+    🔙 
+  </button>
+</header>
 
-      <div className="logo">
-        <img src="/prevfogo-logo.png" alt="logo prev" />
-      </div>
-
-      <button
-        className="logout-button"
-        onClick={handleLogout}
-        title="Sair"
-      >
-        🔙 
-      </button>
-    </header>
   );
 }

@@ -4,13 +4,13 @@ export default function AlertaRiscos() {
   return (
     <div className="alerta-riscos">
       <header className="alerta-header">
-        <button className="back-button" onClick={() => window.history.back()}>
+        <button className="btn-voltar" onClick={() => window.history.back()}>
           ←
         </button>
         <h1>Alerta de Riscos</h1>
       </header>
 
-      <main className="alerta-content">
+      <main className="alerta-conteudo">
         <div className="alerta-cards">
           <div className="card">
             <p>Cidades em Risco Crítico de Queimadas</p>
@@ -73,3 +73,4 @@ export default function AlertaRiscos() {
     </div>
   );
 }
+

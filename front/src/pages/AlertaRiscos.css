@@ -18,7 +18,7 @@
   margin: 0;
 }
 
-.back-button {
+.btn-voltar {
   background: none;
   border: none;
   font-size: 22px;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.alerta-content {
+.alerta-conteudo{
   padding: 20px;
 }
 
@@ -111,3 +111,52 @@
 .alerta-periodo p {
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .alerta-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1 1 calc(33.333% - 16px);
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .alerta-header h1 {
+    font-size: 20px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .alerta-conteudo {
+    padding: 12px;
+  }
+
+  .alerta-cards {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+}
+
+.alerta-ranking {
+  overflow-x: auto;
+}
+
+.alerta-ranking table {
+  min-width: 600px;
+}
+
+

@@ -6,35 +6,26 @@ html, body, #root {
     font-family: Arial, sans-serif;
   }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-  }
-
-.home-container {
-    display: flex;
-    flex-grow: 1;
-    height: 100%;
-    width: 100%;
-  }
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
 
 .main-content {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 16px;
-    transition: margin-left 0.3s ease;
-    min-height: 0
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 
 .content {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 16px;
-    padding-bottom: 64px; 
-  }
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 64px;
+}
 
 .mapa {
   height: 600px;  
@@ -80,6 +71,10 @@ html, body, #root {
   font-weight: bold;
 }
 
+.noticia a:hover{
+  color: #fff;
+}
+
 .contatos {
   font-size: 24px;
   margin-top: 32px;
@@ -119,3 +114,98 @@ html, body, #root {
   margin-top: 6px;
   font-weight: 500;
 }
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 10px;
+  }
+
+  .login-box h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .login-box input,
+  .login-box button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .texto-secundario {
+    font-size: 12px;
+  }
+
+  .mensagem-erro {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .noticias-duplas {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .noticia {
+    flex: 1 1 100%;
+  }
+
+  .mapa {
+    height: 300px; 
+  }
+
+  .contatos {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 8px;
+  }
+
+  .icones-contato {
+    gap: 16px;
+  }
+
+  .contato-item img {
+    width: 40px;
+  }
+
+  .contato-item span {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .noticias-duplas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .noticia {
+    flex: 1 1 48%;
+  }
+
+  .mapa {
+    height: 400px;
+  }
+
+  .contatos {
+    font-size: 20px;
+    margin-top: 24px;
+    padding: 10px;
+  }
+
+  .contato-item img {
+    width: 50px;
+  }
+
+  .contato-item span {
+    font-size: 13px;
+  }
+}
+

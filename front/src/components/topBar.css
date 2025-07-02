@@ -7,20 +7,13 @@
   color: white;
 }
 
-/* Botão do menu */
 .menu-button {
   background: none;
   border: none;
   font-size: 24px;
+  z-index: 1200px;
   color: white;
   cursor: pointer;
-}
-
-.logo {
-  font-size: 1rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .logout-button {

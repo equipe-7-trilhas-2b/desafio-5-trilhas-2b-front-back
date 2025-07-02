@@ -15,7 +15,7 @@ export default function Orientacoes() {
   return (
     <div className="orientacoes">
       <header className="orientacoes-header">
-        <button className="back-button" onClick={() => window.history.back()}>
+        <button className="btn-voltar" onClick={() => window.history.back()}>
           ←
         </button>
         <h1>Orientações</h1>
@@ -24,7 +24,7 @@ export default function Orientacoes() {
       <main className="orientacoes-content">
         <h2>Instruções</h2>
 
-        <div className="orientacoes-buttons">
+        <div className="orientacoes-btn">
           <button className="btn" onClick={() => toggleInstrução('mata')}>
             Prevenção na Mata e Campo ➜
           </button>
