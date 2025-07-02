@@ -102,8 +102,8 @@ exports.moderarDenuncia = async (req, res) => {
     const { status } = req.body;
 
     // Validação para garantir que o status seja um dos valores permitidos
-    if (!status || !['validada', 'rejeitada', 'recebida'].includes(status)) {
-        return res.status(400).json({ error: "Status inválido. Use 'validada' ou 'rejeitada'." });
+    if (!status || !['confirmada', 'em_analise', 'recebida', 'falsa'].includes(status)) {
+        return res.status(400).json({ error: "Status inválido. Use 'confirmada' ou 'falsa'." });
     }
 
     try {

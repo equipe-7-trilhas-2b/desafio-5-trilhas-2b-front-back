@@ -54,7 +54,7 @@ exports.login = async (req, res) => {
     if (rows.length === 0) return res.status(401).json({ error: "Credenciais inválidas." });
 
     const usuario = rows[0];
-    const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
+    const senhaCorreta = await bcrypt.compare(senha, usuario.senha_hash);
     if (!senhaCorreta) return res.status(401).json({ error: "Credenciais inválidas." });
 
     const token = jwt.sign({ sub: usuario.id_usuario, role: usuario.funcao }, process.env.JWT_SECRET, { expiresIn: '7d' });

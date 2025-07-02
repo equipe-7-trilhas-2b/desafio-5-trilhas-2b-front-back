@@ -60,7 +60,6 @@ exports.up = (pgm) => {
       descricao TEXT NOT NULL,
       latitude NUMERIC(10, 8) NOT NULL,
       longitude NUMERIC(11, 8) NOT NULL,
-      foto VARCHAR(255) NOT NULL,
       status status_denuncia NOT NULL DEFAULT 'recebida',
       created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
